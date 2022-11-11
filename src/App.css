@@ -1,0 +1,37 @@
+.App {
+  padding: 20px 40px;
+  box-shadow: 0 0 5px 0;
+  margin: 10px;
+}
+
+h3{
+  color: grey;
+}
+
+.form-group{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.form-control{
+  padding: 5px 10px;
+}
+
+.btn{
+  outline: none;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 5px 20px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+input{
+  outline: none;
+}
+
+.btn-primary{
+  background: green;
+  color: white;
+}
