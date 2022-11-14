@@ -5,6 +5,7 @@ class Form extends React.Component {
     super();
 
     this.state = {
+      title: "",
       val1: 0,
       val2: 0
     };
@@ -22,8 +23,18 @@ class Form extends React.Component {
     });
   }
 
+  updateTitle(event) {
+    this.setState({
+      title: event.target.value
+    });
+  }
+
+  addForm(event) {
+    console.log("clicked");
+  }
+
   render() {
-    const { val1, val2 } = this.state;
+    const { title, val1, val2 } = this.state;
 
     const total = parseInt(val1) + parseInt(val2);
 
@@ -31,8 +42,38 @@ class Form extends React.Component {
 
     return (
       <div className="App">
+        <form className="form-data">
+          <div>
+            <label htmlFor="">Title: </label>
+            <input
+              type="text"
+              value={title}
+              onChange={this.updateTitle.bind(this)}
+            />
+          </div>
+          <div>
+            <label htmlFor="">Name: </label>
+            <input
+              type="text"
+              value={title}
+              onChange={this.updateTitle.bind(this)}
+            />
+          </div>
+          <div>
+            <label htmlFor="">Display As:</label>
+            <select>
+              <option value="form">Form</option>
+              <option value="wizard">Wizard</option>
+              <option value="pdf">PDF</option>
+            </select>
+          </div>
+        </form>
+
+        <button>Add Form</button>
+
+        <hr/>
         <div className="app-title">
-          <h3>Calculated Fields</h3>
+          <h3>{title}</h3>
         </div>
         <form>
           <div className="form-group">
