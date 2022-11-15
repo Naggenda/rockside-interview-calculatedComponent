@@ -23,9 +23,21 @@ class Form extends React.Component {
     });
   }
 
+  updateNum(event) {
+    this.setState({
+      num: event.target.value
+    });
+  }
+
   updateTitle(event) {
     this.setState({
       title: event.target.value
+    });
+  }
+
+  updateFormular(event) {
+    this.setState({
+      formular: event.target.value
     });
   }
 
@@ -34,11 +46,13 @@ class Form extends React.Component {
   }
 
   render() {
-    const { title, val1, val2 } = this.state;
+    const { title, val1, val2, num, formular } = this.state;
 
     const total = parseInt(val1) + parseInt(val2);
-
-    const product = total * 10;
+    // const total = (formular);
+    const product = total * parseInt(num);
+    
+    
 
     return (
       <div className="App">
@@ -67,11 +81,28 @@ class Form extends React.Component {
               <option value="pdf">PDF</option>
             </select>
           </div>
+          <div>
+            <label htmlFor="">Set Constant: </label>
+            <input
+              type="number"
+              value={num}
+              onChange={this.updateNum.bind(this)}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="">set Formular: </label>
+            <input
+              type="text"
+              value={formular}
+              onChange={this.updateFormular.bind(this)}
+            />
+          </div>
         </form>
 
         <button>Add Form</button>
 
-        <hr/>
+        <hr />
         <div className="app-title">
           <h3>{title}</h3>
         </div>
@@ -107,7 +138,7 @@ class Form extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="">Number of Goats</label>
+            <label htmlFor="">Total animals * {num}</label>
             <input
               type="text"
               value={product}
