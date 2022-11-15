@@ -35,3 +35,9 @@ input{
   background: green;
   color: white;
 }
+
+@media screen and (max-width: 427px){
+  .form-data{
+    flex-direction: column;
+  }
+}
