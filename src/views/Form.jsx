@@ -7,8 +7,24 @@ class Form extends React.Component {
     this.state = {
       title: "",
       val1: 0,
-      val2: 0
+      val2: 0,
+      total: ""
     };
+  }
+
+  MissedGoal() {
+    // return <h1>MISSED!</h1>;
+    this.setState({
+
+    })
+
+  }
+  
+  MadeGoal() {
+    this.setState({
+      num: 10
+    })
+    // return <h1>Goal!</h1>;
   }
 
   updateVal1(event) {
@@ -46,11 +62,12 @@ class Form extends React.Component {
   }
 
   render() {
-    const { title, val1, val2, num, formular } = this.state;
+    const { title, val1, val2, num, formular, MadeGoal } = this.state;
 
     const total = parseInt(val1) + parseInt(val2);
     // const total = (formular);
     const product = total * parseInt(num);
+    
     
     
 

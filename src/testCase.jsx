@@ -1,27 +1,25 @@
-import { FieldList, Inject, CalculatedField, PivotViewComponent } from '@syncfusion/ej2-react-pivotview';
+import { CalculatedField, FieldList, Inject, PivotViewComponent } from '@syncfusion/ej2-react-pivotview';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+// import * as ReactDOM from 'react-dom';
 import { pivotData } from './datasource';
 class TestCase extends React.Component {
     constructor() {
+        // allowCalculatedField={true}
         super(...arguments);
         this.dataSourceSettings = {
+            columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
             dataSource: pivotData,
             expandAll: false,
-            columns: [{ name: 'Year', caption: 'Production Year' }, { name: 'Quarter' }],
-            rows: [{ name: 'Country' }, { name: 'Products' }],
-            values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }],
             filters: [],
+            drilledMembers: [{ name: 'Country', items: ['France'] }],
+            formatSettings: [{ name: 'Amount', format: 'C0' }, { name: 'Total', format: 'C2' }],
+            rows: [{ name: 'Country' }, { name: 'Products' }],
+            values: [{ name: 'Sold', caption: 'Units Sold' }, { name: 'Amount', caption: 'Sold Amount' }, { name: 'Total', caption: 'Total Units', type: 'CalculatedField' }],
             calculatedFieldSettings: [{ name: 'Total', formula: '"Sum(Amount)"+"Sum(Sold)"' }]
         };
     }
     render() {
-        return <PivotViewComponent ref={d => this.pivotObj = d} id='PivotView' height={350} dataSourceSettings={this.dataSourceSettings} actionComplete={this.actionComplete.bind(this)} allowCalculatedField={true} showFieldList={true}><Inject services={[CalculatedField, FieldList]}/></PivotViewComponent>;
-    }
-    actionComplete(args) {
-        if (args.actionName === 'Calculated field applied') {
-            // Triggers when the calculated field is applied.
-        }
+        return <PivotViewComponent ref={d => this.pivotObj = d} id='PivotView' height={350} dataSourceSettings={this.dataSourceSettings} allowCalculatedField={true} showFieldList={true}><Inject services={[CalculatedField, FieldList]}/> </PivotViewComponent>;
     }
 }
 
