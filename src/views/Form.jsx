@@ -100,6 +100,7 @@ class Form extends React.Component {
               type="text"
               value={formular}
               onChange={this.updateFormular.bind(this)}
+              placeholder="{total= parseInt(val1) + parseInt(val2)}"
             />
           </div>
         </form>
