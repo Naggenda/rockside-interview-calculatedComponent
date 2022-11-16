@@ -12,20 +12,7 @@ class Form extends React.Component {
     };
   }
 
-  MissedGoal() {
-    // return <h1>MISSED!</h1>;
-    this.setState({
-
-    })
-
-  }
   
-  MadeGoal() {
-    this.setState({
-      num: 10
-    })
-    // return <h1>Goal!</h1>;
-  }
 
   updateVal1(event) {
     this.setState({
@@ -125,7 +112,7 @@ class Form extends React.Component {
         </div>
         <form>
           <div className="form-group">
-            <label htmlFor="">Number of sheep</label>
+            <label htmlFor="" contentEditable="true">Number of sheep</label>
             <input
               type="number"
               value={val1}
@@ -135,7 +122,7 @@ class Form extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="">Number of Goats</label>
+            <label htmlFor="" contentEditable="true">Number of Goats</label>
             <input
               type="number"
               value={val2}
@@ -145,7 +132,7 @@ class Form extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="">Total animals</label>
+            <label htmlFor="" contentEditable="true">Total animals</label>
             <input
               type="text"
               value={total}
@@ -155,7 +142,7 @@ class Form extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="">Total animals * {num}</label>
+            <label htmlFor="" contentEditable="true">Total animals * {num}</label>
             <input
               type="text"
               value={product}
