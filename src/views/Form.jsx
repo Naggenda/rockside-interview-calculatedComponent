@@ -143,7 +143,7 @@ class Form extends React.Component {
           </div>
 
           <div className="form-group">
-            <label htmlFor="" contentEditable="true">Total animals * {num}</label>
+            <label htmlFor="" contentEditable="true">Total animals * 10</label>
             <input
               type="text"
               value={product}
