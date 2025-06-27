@@ -53,7 +53,7 @@ class Form extends React.Component {
 
     const total = parseInt(val1) + parseInt(val2);
     // const total = (formular);
-    const product = total * parseInt(num);
+    const product = total * 10;
     
     
     
